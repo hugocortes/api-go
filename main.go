@@ -6,10 +6,10 @@ import (
 
 func main() {
 	r := gin.Default()
-	r.GET("/status", status)
+	r.GET("/status", HealthCheckHandler)
 	r.Run()
 }
 
-func status(c *gin.Context) {
+func HealthCheckHandler(c *gin.Context) {
 	c.Status(200)
 }
