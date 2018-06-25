@@ -5,7 +5,6 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-
 	"github.com/hugocortes/api-go/routes"
 	"github.com/joho/godotenv"
 )
