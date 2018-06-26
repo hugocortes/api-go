@@ -5,8 +5,8 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
+	"github.com/hugocortes/api-go/modules"
 	"github.com/hugocortes/api-go/plugins/keycloak"
-	"github.com/hugocortes/api-go/routes"
 	"github.com/joho/godotenv"
 )
 
@@ -25,6 +25,6 @@ func main() {
 	keycloak.Initialize()
 
 	// API route initialization
-	router := routes.InitRouter()
+	router := modules.InitRouter()
 	router.Run(":" + os.Getenv("PORT"))
 }

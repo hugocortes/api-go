@@ -1,17 +1,20 @@
-package routes
+package modules
 
 import (
 	"time"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	"github.com/hugocortes/api-go/modules/oauth"
+	"github.com/hugocortes/api-go/modules/utility"
 )
 
-// InitRouter defines all routes
+// InitRouter ..
 func InitRouter() *gin.Engine {
 	router := gin.Default()
 
-	initStatusRoutes(router)
+	utility.InitUtilityRoutes(router)
+	oauth.InitOAuthRoutes(router)
 
 	router.NoRoute(notFoundHandler)
 
