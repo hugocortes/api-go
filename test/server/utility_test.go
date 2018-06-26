@@ -6,12 +6,12 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/hugocortes/api-go/routes"
+	"github.com/hugocortes/api-go/modules"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestGetStatus(t *testing.T) {
-	testRouter := routes.InitRouter()
+	testRouter := modules.InitRouter()
 
 	req, err := http.NewRequest("GET", "/status", nil)
 
