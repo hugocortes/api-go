@@ -1,5 +1,5 @@
 /**
- * Singleton Keycloak
+ * Initializes singleton Keycloak
  * Implemented with thread safety
  */
 
@@ -15,21 +15,21 @@ type keycloak struct {
 	// Configuration
 	baseURL      string
 	realm        string
-	ClientID     string
-	ClientName   string
-	ClientSecret string
+	clientID     string
+	clientName   string
+	clientSecret string
 	clientToken  string
 
 	// Admin Routes
-	AdminUsers     string
-	AdminResources string
-	AdminEvaluate  string
+	adminUsers     string
+	adminResources string
+	adminEvaluate  string
 
 	// UMA Routes
-	UmaAuth     string
-	UmaToken    string
-	UmaUserInfo string
-	UmaResource string
+	umaAuth     string
+	umaToken    string
+	umaUserInfo string
+	umaResource string
 }
 
 var websiteInstance *keycloak
@@ -50,9 +50,9 @@ func initializeWebsite() *keycloak {
 		// base configuration
 		baseURL:      os.Getenv("KEYCLOAK_BASE"),
 		realm:        os.Getenv("KEYCLOAK_REALM"),
-		ClientID:     os.Getenv("KEYCLOAK_CLIENT_ID"),
-		ClientName:   os.Getenv("KEYCLOAK_CLIENT_NAME"),
-		ClientSecret: os.Getenv("KEYCLOAK_CLIENT_SECRET"),
+		clientID:     os.Getenv("KEYCLOAK_CLIENT_ID"),
+		clientName:   os.Getenv("KEYCLOAK_CLIENT_NAME"),
+		clientSecret: os.Getenv("KEYCLOAK_CLIENT_SECRET"),
 	}
 }
 
@@ -62,5 +62,5 @@ func GetWebInstance() *keycloak {
 }
 
 func (client *keycloak) setUmaTokenPath() {
-	client.UmaToken = client.baseURL + "/auth/realms/" + client.realm + "/protocol/openid-connect/token"
+	client.umaToken = client.baseURL + "/auth/realms/" + client.realm + "/protocol/openid-connect/token"
 }

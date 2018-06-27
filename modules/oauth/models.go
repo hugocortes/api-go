@@ -8,9 +8,4 @@ type (
 		Password  string `json:"password"`
 		Scope     string `json:"scope"`
 	}
-
-	// TransformedToken response
-	TransformedToken struct {
-		AccessToken string `json:"access_token"`
-	}
 )
