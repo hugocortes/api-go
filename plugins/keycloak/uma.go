@@ -11,7 +11,7 @@ import (
 	"strings"
 )
 
-func (client *keycloak) HandlePasswordGrant(username string, password string, scope string) (*TransformedUmaToken, error) {
+func (client *keycloak) HandlePasswordGrant(username string, password string, scope string) (*TransformedUMAToken, error) {
 	data := url.Values{}
 	data.Set("grant_type", "password")
 	data.Add("username", username)
@@ -31,7 +31,7 @@ func (client *keycloak) HandlePasswordGrant(username string, password string, sc
 		return nil, err
 	}
 
-	values := &TransformedUmaToken{}
+	values := &TransformedUMAToken{}
 	err = decoder.Decode(values)
 
 	if err != nil {

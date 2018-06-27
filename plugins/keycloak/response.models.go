@@ -1,7 +1,7 @@
 package keycloak
 
-// TransformedUmaToken response on oAuth request
-type TransformedUmaToken struct {
+// TransformedUMAToken response on oAuth request
+type TransformedUMAToken struct {
 	AccessToken      string `json:"access_token"`
 	ExpiresIn        int    `json:"expires_in"`
 	RefreshExpiresIn int    `json:"refresh_expires_in"`
