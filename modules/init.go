@@ -1,20 +1,23 @@
 package modules
 
 import (
-	"time"
+	"os"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	"github.com/hugocortes/api-go/modules/books"
 	"github.com/hugocortes/api-go/modules/oauth"
 	"github.com/hugocortes/api-go/modules/utility"
 )
 
 // InitRouter ..
 func InitRouter() *gin.Engine {
+	gin.SetMode(os.Getenv("GIN_MODE"))
 	router := gin.Default()
 
 	utility.InitUtilityRoutes(router)
 	oauth.InitOAuthRoutes(router)
+	books.InitBookRoutes(router)
 
 	router.NoRoute(notFoundHandler)
 
@@ -24,7 +27,6 @@ func InitRouter() *gin.Engine {
 		AllowHeaders:     []string{"Origin", "X-Requested-With", "Content-Type", "Authorization", "Accept", "x-access-token"},
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
-		MaxAge:           12 * time.Hour,
 	}))
 
 	return router

@@ -35,8 +35,16 @@ type keycloak struct {
 var websiteInstance *keycloak
 var once sync.Once
 
+// GetWebInstance returns a singleton keycloak struct
+func GetWebInstance() *keycloak {
+	if websiteInstance == nil {
+		initialize()
+	}
+	return websiteInstance
+}
+
 // Initialize keycloak clients as singletons
-func Initialize() {
+func initialize() {
 	once.Do(func() {
 		websiteInstance = initializeWebsite()
 
@@ -54,11 +62,6 @@ func initializeWebsite() *keycloak {
 		clientName:   os.Getenv("KEYCLOAK_CLIENT_NAME"),
 		clientSecret: os.Getenv("KEYCLOAK_CLIENT_SECRET"),
 	}
-}
-
-// GetWebInstance returns a singleton keycloak struct
-func GetWebInstance() *keycloak {
-	return websiteInstance
 }
 
 func (client *keycloak) setUmaTokenPath() {
