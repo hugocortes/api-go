@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/hugocortes/api-go/modules"
+	"github.com/hugocortes/paprika-api/modules"
 	"github.com/joho/godotenv"
 )
 

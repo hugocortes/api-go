@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/hugocortes/api-go/plugins/keycloak"
+	"github.com/hugocortes/paprika-api/plugins/keycloak"
 )
 
 // Controller ...

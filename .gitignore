@@ -1,4 +1,4 @@
 .vscode
 debug*
 .env
-api-go
+paprika-api

@@ -1,4 +1,4 @@
-# api-go
+# paprika-api
 simple golang api
 
 # Running
@@ -9,8 +9,8 @@ simple golang api
 # Building
 1. Create `.env` using `.env.example`
 2. `go get ./`
-3. `go build -o api-go ./`
-4. `./api-go`
+3. `go build -o paprika-api ./`
+4. `./paprika-api`
 
 # Testing
 1. Create `.env` using `.env.example`
