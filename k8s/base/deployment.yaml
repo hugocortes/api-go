@@ -1,0 +1,41 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: paprika-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: paprika-api
+      role: backend
+      env: local
+  template:
+    metadata:
+      name: paprika-api
+      labels:
+        app: paprika-api
+        role: backend
+        env: local
+    spec:
+      containers:
+      - name: paprika-api
+        image: docker.io/hugocortes/paprika-api
+        ports:
+        - containerPort: 3000
+          protocol: TCP
+        env:
+        - name: HOST
+          valueFrom:
+            configMapKeyRef:
+              name: paprika-api-config
+              key: HOST
+        - name: PORT
+          valueFrom:
+            configMapKeyRef:
+              name: paprika-api-config
+              key: PORT
+        - name: GIN_MODE
+          valueFrom:
+            configMapKeyRef:
+              name: paprika-api-config
+              key: GIN_MODE
