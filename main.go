@@ -1,7 +1,7 @@
 package main
 
 import (
-	"log"
+	"fmt"
 	"os"
 
 	"github.com/hugocortes/paprika-api/modules"
@@ -12,7 +12,7 @@ import (
 func init() {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatalf("unable to load .env file %s", err)
+		fmt.Println("did not load from .env")
 	}
 }
 
