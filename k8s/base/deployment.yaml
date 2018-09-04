@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: paprika-api
-        image: docker.io/hugocortes/paprika-api
+        image: docker.io/hugocortes/paprika-api-go
         ports:
         - containerPort: 3000
           protocol: TCP

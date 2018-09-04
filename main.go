@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/hugocortes/paprika-api/modules"
+	"github.com/hugocortes/paprika-api-go/modules"
 	"github.com/joho/godotenv"
 )
 

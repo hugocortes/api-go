@@ -5,9 +5,9 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/hugocortes/paprika-api/modules/books"
-	"github.com/hugocortes/paprika-api/modules/oauth"
-	"github.com/hugocortes/paprika-api/modules/utility"
+	"github.com/hugocortes/paprika-api-go/modules/books"
+	"github.com/hugocortes/paprika-api-go/modules/oauth"
+	"github.com/hugocortes/paprika-api-go/modules/utility"
 )
 
 // InitRouter ..

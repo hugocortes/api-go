@@ -4,7 +4,7 @@ build:
   tagPolicy:
     sha256: {}
   artifacts:
-  - imageName: docker.io/hugocortes/paprika-api
+  - imageName: docker.io/hugocortes/paprika-api-go
     workspace: .
 deploy:
   kustomize:

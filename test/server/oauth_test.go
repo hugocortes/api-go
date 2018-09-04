@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hugocortes/paprika-api/modules"
+	"github.com/hugocortes/paprika-api-go/modules"
 	"github.com/stretchr/testify/assert"
 )
 
