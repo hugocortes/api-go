@@ -1,6 +1,0 @@
-commonLabels:
-  app: paprika-api
-resources:
-- deployment.yaml
-- configMap.yaml
-- service.yaml
