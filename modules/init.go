@@ -5,19 +5,20 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/hugocortes/paprika-api-go/modules/books"
+	"github.com/hugocortes/paprika-api-go/data/sql"
 	"github.com/hugocortes/paprika-api-go/modules/oauth"
+	"github.com/hugocortes/paprika-api-go/modules/users"
 	"github.com/hugocortes/paprika-api-go/modules/utility"
 )
 
 // InitRouter ..
-func InitRouter() *gin.Engine {
+func InitRouter(db *sql.DB) *gin.Engine {
 	gin.SetMode(os.Getenv("GIN_MODE"))
 	router := gin.Default()
 
 	utility.InitUtilityRoutes(router)
 	oauth.InitOAuthRoutes(router)
-	books.InitBookRoutes(router)
+	users.InitUsersRoutes(router, db)
 
 	router.NoRoute(notFoundHandler)
 
