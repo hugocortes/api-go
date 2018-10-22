@@ -4,8 +4,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// InitOAuthRoutes ...
-func InitOAuthRoutes(router *gin.Engine) {
+// InitRoutes ...
+func InitRoutes(router *gin.Engine) {
 	controller := new(Controller)
 
 	router.POST("/oauth/token", controller.GetOAuthToken)

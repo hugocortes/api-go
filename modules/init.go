@@ -13,12 +13,19 @@ import (
 
 // InitRouter ..
 func InitRouter(db *sql.DB) *gin.Engine {
+	router := GetDefaultRouter()
+
+	utility.InitRoutes(router)
+	oauth.InitRoutes(router)
+	users.InitRoutes(router, db)
+
+	return router
+}
+
+// GetDefaultRouter returns the default gin router
+func GetDefaultRouter() *gin.Engine {
 	gin.SetMode(os.Getenv("GIN_MODE"))
 	router := gin.Default()
-
-	utility.InitUtilityRoutes(router)
-	oauth.InitOAuthRoutes(router)
-	users.InitUsersRoutes(router, db)
 
 	router.NoRoute(notFoundHandler)
 

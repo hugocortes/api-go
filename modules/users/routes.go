@@ -5,8 +5,8 @@ import (
 	"github.com/hugocortes/paprika-api-go/data/sql"
 )
 
-// InitUsersRoutes ...
-func InitUsersRoutes(router *gin.Engine, db *sql.DB) {
+// InitRoutes ...
+func InitRoutes(router *gin.Engine, db *sql.DB) {
 	controller := Controller{
 		db: *db,
 	}
