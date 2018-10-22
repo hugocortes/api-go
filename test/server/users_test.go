@@ -8,9 +8,9 @@ import (
 	"testing"
 
 	"github.com/gin-gonic/gin"
+	"github.com/hugocortes/paprika-api-go/api"
+	"github.com/hugocortes/paprika-api-go/api/users"
 	"github.com/hugocortes/paprika-api-go/data/sql"
-	"github.com/hugocortes/paprika-api-go/modules"
-	"github.com/hugocortes/paprika-api-go/modules/users"
 	"github.com/joho/godotenv"
 	"github.com/stretchr/testify/assert"
 )
@@ -32,7 +32,7 @@ func usersSetup() {
 
 	// DB connection
 	usersApp.db = sql.NewConnection(os.Getenv("MYSQL_DSN"), true)
-	usersApp.router = modules.GetDefaultRouter()
+	usersApp.router = api.GetDefaultRouter()
 	users.InitRoutes(usersApp.router, usersApp.db)
 
 	return

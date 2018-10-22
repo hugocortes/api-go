@@ -1,14 +1,14 @@
-package modules
+package api
 
 import (
 	"os"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	"github.com/hugocortes/paprika-api-go/api/oauth"
+	"github.com/hugocortes/paprika-api-go/api/users"
+	"github.com/hugocortes/paprika-api-go/api/utility"
 	"github.com/hugocortes/paprika-api-go/data/sql"
-	"github.com/hugocortes/paprika-api-go/modules/oauth"
-	"github.com/hugocortes/paprika-api-go/modules/users"
-	"github.com/hugocortes/paprika-api-go/modules/utility"
 )
 
 // InitRouter ..

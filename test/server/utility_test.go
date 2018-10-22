@@ -7,8 +7,8 @@ import (
 	"testing"
 
 	"github.com/gin-gonic/gin"
-	"github.com/hugocortes/paprika-api-go/modules"
-	"github.com/hugocortes/paprika-api-go/modules/utility"
+	"github.com/hugocortes/paprika-api-go/api"
+	"github.com/hugocortes/paprika-api-go/api/utility"
 	"github.com/joho/godotenv"
 	"github.com/stretchr/testify/assert"
 )
@@ -27,7 +27,7 @@ func utilitySetup() {
 		fmt.Println("did not load from .env")
 	}
 
-	utilityApp.router = modules.GetDefaultRouter()
+	utilityApp.router = api.GetDefaultRouter()
 	utility.InitRoutes(utilityApp.router)
 
 	return

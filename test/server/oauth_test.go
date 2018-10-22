@@ -9,8 +9,8 @@ import (
 	"testing"
 
 	"github.com/gin-gonic/gin"
-	"github.com/hugocortes/paprika-api-go/modules"
-	"github.com/hugocortes/paprika-api-go/modules/oauth"
+	"github.com/hugocortes/paprika-api-go/api"
+	"github.com/hugocortes/paprika-api-go/api/oauth"
 	"github.com/joho/godotenv"
 	"github.com/stretchr/testify/assert"
 )
@@ -30,7 +30,7 @@ func oauthSetup() {
 	}
 
 	// api
-	oauthApp.router = modules.GetDefaultRouter()
+	oauthApp.router = api.GetDefaultRouter()
 	oauth.InitRoutes(oauthApp.router)
 
 	return
